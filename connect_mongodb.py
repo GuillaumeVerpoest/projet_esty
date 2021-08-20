@@ -17,7 +17,7 @@ class Conn:
 
     @classmethod
     def get_data(cls):
-        mydb = cls.myclient["esty"]
+        mydb = cls.client["esty"]
         mycol = mydb["esty"]
         x = mycol.find()
         return pd.DataFrame(x)
