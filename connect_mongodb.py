@@ -8,16 +8,16 @@ class Conn:
     def __init__(self) -> None:
         self.client = MongoClient(st.secrets["mongodb_key"])
 
-    @classmethod
-    def insert_many(cls,liste_data):
-        mydb = cls.client["esty"]
+
+    def insert_many(self,liste_data):
+        mydb = self.client["esty"]
         mycol = mydb["esty"]
         mycol.insert_many(liste_data)
 
 
-    @classmethod
-    def get_data(cls):
-        mydb = cls.client["esty"]
+
+    def get_data(self):
+        mydb = self.client["esty"]
         mycol = mydb["esty"]
         x = mycol.find()
         return pd.DataFrame(x)
