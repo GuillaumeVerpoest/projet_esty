@@ -4,3 +4,4 @@ pandas
 numpy
 streamlit
 beautifulsoup4
+pymongo[srv]
