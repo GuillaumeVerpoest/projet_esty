@@ -74,7 +74,9 @@ class Design():
                 "Tendance":m.iloc[-2]["mean"] - m.iloc[-1]["mean"],
             }
         )
-        st.text("version123",st.__version__)
+        t.text("version")
+
+        st.text(st.__version__)
 
         cpt = st.slider('Slope', min_value=1, max_value=50, step=1)
         df_board = df_origin[['produit','price','profil']]
