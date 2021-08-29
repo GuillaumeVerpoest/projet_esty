@@ -74,7 +74,8 @@ class Design():
                 "Tendance":m.iloc[-2]["mean"] - m.iloc[-1]["mean"],
             }
         )
-        
+        print(st.__version__)
+
         cpt = st.slider('Slope', min_value=1, max_value=50, step=1)
         df_board = df_origin[['produit','price','profil']]
         st.dataframe(df_board.sort_values(by=["price"], ascending=False).head(cpt),1000,1000)
