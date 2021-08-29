@@ -2,11 +2,12 @@ from pymongo import MongoClient
 import pandas as pd 
 import streamlit as st
 
-
+#st.secrets["mongodb_key"] = "mongodb+srv://Guillaume:Guillaume@cluster0.bk25f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 class Conn:
 
     def __init__(self) -> None:
-        self.client = MongoClient(st.secrets["mongodb_key"])
+        #self.client = MongoClient(st.secrets["mongodb_key"])
+        self.client = MongoClient("mongodb+srv://Guillaume:Guillaume@cluster0.bk25f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
       
 
     def insert_many(self,liste_data):
