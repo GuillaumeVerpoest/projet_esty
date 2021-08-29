@@ -74,7 +74,7 @@ class Design():
                 "Tendance":m.iloc[-2]["mean"] - m.iloc[-1]["mean"],
             }
         )
-        t.text("version")
+        st.text("version")
 
         st.text(st.__version__)
 
