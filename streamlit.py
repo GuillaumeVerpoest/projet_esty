@@ -67,7 +67,7 @@ class Design():
 
         m = self.create_data_timeseries(df_origin)
 
-        #st.metric(label="Streamlit version", value=0.87, delta=0.01)
+        st.metric(label="Streamlit version", value=0.87, delta=0.01)
         metric_row(
             {
                 "Total de Données selectioné": df_origin.shape[0],
