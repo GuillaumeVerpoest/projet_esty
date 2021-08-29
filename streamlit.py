@@ -67,18 +67,12 @@ class Design():
 
         m = self.create_data_timeseries(df_origin)
 
-        st.metric(label="Streamlit version", value=0.87, delta=0.01)
-        metric_row(
-            {
-                "Total de Données selectioné": df_origin.shape[0],
-                "Tendance":m.iloc[-2]["mean"] - m.iloc[-1]["mean"],
-            }
-        )
-        st.text("version")
+        col1, col2 = st.columns(2)
+        col1.metric("Total de Données selectioné", "df_origin.shape[0]")
+        col2.metric("Tendance", m.iloc[-1]["mean"], m.iloc[-2]["mean"] - m.iloc[-1]["mean"])
 
-        st.text(st.__version__)
 
-        cpt = st.slider('Slope', min_value=1, max_value=50, step=1)
+        cpt = st.slider('Slope', min_value=1, max_value=50, step=1, value=5)
         df_board = df_origin[['produit','price','profil']]
         st.dataframe(df_board.sort_values(by=["price"], ascending=False).head(cpt),1000,1000)
 
