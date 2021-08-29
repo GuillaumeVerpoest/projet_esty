@@ -5,3 +5,4 @@ numpy
 streamlit
 beautifulsoup4
 pymongo[srv]
+streamlit-metrics==0.1.0
